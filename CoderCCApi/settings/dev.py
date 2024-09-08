@@ -73,10 +73,14 @@ WSGI_APPLICATION = 'CoderCCApi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+DATABASE = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'codercc_django_learning_website',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -174,3 +178,4 @@ REST_FRAMEWORK = {
     # 异常处理
     'EXCEPTION_HANDLER': 'CoderCCApi.utils.exceptions.custom_exception_handler',
 }
+
