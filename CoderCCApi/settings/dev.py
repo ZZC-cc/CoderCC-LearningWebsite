@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-1yex+^(as_hg3-1wbz27#0njn3l$o+@$3jiji-k@@kmto#0fd$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'api.codercc.cn',
+    'www.codercc.cn',
+    'localhost',
+]
 
 
 # Application definition
@@ -37,9 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -178,4 +185,10 @@ REST_FRAMEWORK = {
     # 异常处理
     'EXCEPTION_HANDLER': 'CoderCCApi.utils.exceptions.custom_exception_handler',
 }
+
+# CORS组的配置信息
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:8080',
+)
+CORS_ALLOW_CREDENTIALS = False  # 允许ajax跨域请求时携带cookie
 
