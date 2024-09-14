@@ -34,7 +34,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'api.codercc.cn',
     'www.codercc.cn',
-    'localhost',
+    '127.0.0.1',
 ]
 
 # Application definition
