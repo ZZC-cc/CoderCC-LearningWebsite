@@ -18,7 +18,7 @@ class Banner(models.Model):
 
     # 表信息声明
     class Meta:
-        db_table = "ly_banner"
+        db_table = "cc_banner"
         verbose_name = "轮播广告"
         verbose_name_plural = verbose_name
 
