@@ -1,2 +1,6 @@
-#　轮播的显示数量
+# 轮播的显示数量
 BANNER_LENGTH = 10
+
+# 导航的显示数量
+HEADER_NAV_LENGTH = 8
+FOOTER_NAV_LENGTH = 8

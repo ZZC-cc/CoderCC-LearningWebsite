@@ -3,18 +3,17 @@
       <div class="header">
         <div class="content">
           <div class="logo full-left">
-            <router-link to="/"><img src="@/static/image/logo.svg" alt=""></router-link>
+            <router-link to="/"><img src="/static/image/logo.svg" alt=""></router-link>
           </div>
           <ul class="nav full-left">
-              <li><span>免费课</span></li>
-              <li><span>轻课</span></li>
-              <li><span>学位课</span></li>
-              <li><span>题库</span></li>
-              <li><span>老男孩教育</span></li>
+              <li v-for="nav in nav_list">
+                <span v-if="nav.is_site"><a :href="nav.link">{{nav.title}}</a></span>
+                <span v-else><router-link :to="nav.link">{{nav.title}}</router-link></span>
+              </li>
           </ul>
           <div class="login-bar full-right">
             <div class="shop-cart full-left">
-              <img src="@/static/image/cart.svg" alt="">
+              <img src="/static/image/cart.svg" alt="">
               <span><router-link to="/cart">购物车</router-link></span>
             </div>
             <div class="login-box full-left">
@@ -29,12 +28,27 @@
 </template>
 
 <script>
+import settings from "../../setting";
     export default {
       name: "Header",
       data(){
         return{
+            nav_list: [],
         }
       },
+      created() {
+          this.get_nav();
+      },
+      methods:{
+          get_nav(){
+              this.$axios.get(`${settings.HOST}/home/nav/header/`,{}).then(response=>{
+                  this.nav_list = response.data;
+                console.log(response.data)
+              }).catch(error=>{
+                  console.log(error.response);
+              })
+          }
+      }
     }
 </script>
 

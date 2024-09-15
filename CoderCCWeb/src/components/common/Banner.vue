@@ -23,8 +23,6 @@ import settings from '../../setting';
             get_banner_list(){
                 // 获取轮播广告列表
                 this.$axios.get(`${settings.HOST}/home/banner/`,{}).then(response=>{
-                  console.log(1111)
-                  console.log(response);
                   this.banner_list = response.data;
                 }).catch(error=>{
                   console.log(error.response)
