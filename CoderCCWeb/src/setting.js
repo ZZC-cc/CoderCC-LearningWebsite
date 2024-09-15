@@ -1,3 +1,3 @@
 export default {
-  "HOST": "http://0.0.0.0:8080/",
+  "HOST": "http://127.0.0.1:8000",
 }
