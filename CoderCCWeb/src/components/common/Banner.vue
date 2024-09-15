@@ -1,13 +1,13 @@
 <template>
   <el-carousel height="720px" :interval="3000" arrow="always">
     <el-carousel-item>
-      <img src="/static/image/alex.jpeg" alt="">
+      <img src="/CoderCCApi/static/image/alex.jpeg" alt="">
     </el-carousel-item>
     <el-carousel-item>
-      <img src="/static/image/banner1.png" alt="">
+      <img src="/CoderCCApi/static/image/banner1.png" alt="">
     </el-carousel-item>
     <el-carousel-item>
-      <img src="/static/image/banner1.png" alt="">
+      <img src="/CoderCCApi/static/image/banner1.png" alt="">
     </el-carousel-item>
   </el-carousel>
 </template>

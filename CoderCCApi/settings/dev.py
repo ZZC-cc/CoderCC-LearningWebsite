@@ -34,7 +34,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'api.codercc.cn',
     'www.codercc.cn',
-    'localhost',
+    '127.0.0.1',
 ]
 
 # Application definition
@@ -51,8 +51,13 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # 子应用
-    'home'
+    'home',
+
+    'xadmin',
+    'crispy_forms',
+    'reversion',
 ]
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -89,7 +94,7 @@ WSGI_APPLICATION = 'CoderCCApi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASE = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'codercc_django_learning_website',
@@ -123,9 +128,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# 修改使用中文界面
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
+# 修改时区
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -141,7 +148,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # 设置django的静态文件目录
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"static")
+    os.path.join(BASE_DIR, "static")
 ]
 
 # 项目中存储上传文件的根目录[暂时配置]，注意，uploads目录需要手动创建否则上传文件时报错
